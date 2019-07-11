@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="3" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="3" default="animal" label="Dependent Field 1" max_length="40" name="u_dep_1" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Animal" sequence="0" value="animal"/>
+                <element inactive_on_update="false" label="Bird" sequence="1" value="bird"/>
+                <element inactive_on_update="false" label="Fish" sequence="2" value="fish"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" dependent="u_dep_1" dependent_on_field="u_dep_1" label="Dependent Field 2" max_length="40" name="u_dep_2" type="string" use_dependent_field="true">
+            <choice>
+                <element dependent_value="Animal" inactive_on_update="false" label="Cat" value="Cat"/>
+                <element dependent_value="Animal" inactive_on_update="false" label="Dog" value="Dog"/>
+                <element dependent_value="Bird" inactive_on_update="false" label="Eagle" value="Eagle"/>
+                <element dependent_value="Fish" inactive_on_update="false" label="GoldFish" value="GoldFish"/>
+                <element dependent_value="Animal" inactive_on_update="false" label="Monkey" value="Monkey"/>
+                <element dependent_value="Bird" inactive_on_update="false" label="Parrot" value="Parrot"/>
+                <element dependent_value="Fish" inactive_on_update="false" label="Tuna" value="Tuna"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="When Needed" mandatory="true" max_length="40" name="u_glide_date_1" type="glide_date"/>
+        <element dependent="priority" dependent_on_field="priority" label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference" use_dependent_field="true"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="hr" label="Request Type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="1" value="facilities"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
+                <element inactive_on_update="false" label="Marketing" sequence="3" value="marketing"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="legal1" label="What Needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources 1" sequence="0" value="hr1"/>
+                <element inactive_on_update="false" label="Human Resources 2" sequence="1" value="hr2"/>
+                <element inactive_on_update="false" label="Facilities 1" sequence="2" value="facilities1"/>
+                <element inactive_on_update="false" label="Facilities 2" sequence="3" value="facilities2"/>
+                <element inactive_on_update="false" label="Legal 1" sequence="4" value="legal1"/>
+                <element inactive_on_update="false" label="Legal 2" sequence="5" value="legal2"/>
+                <element inactive_on_update="false" label="Marketing 1" sequence="6" value="marketing1"/>
+                <element inactive_on_update="false" label="Marketing 2" sequence="7" value="marketing2"/>
+            </choice>
+        </element>
+    </element>
+</database>
